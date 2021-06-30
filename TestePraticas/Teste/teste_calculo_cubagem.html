@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando Cubagem</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+        input{
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+        input#botao {
+            font: normal 20pt Arial;
+            width: 150px;
+            background-color: cadetblue;
+        }
+        div#res {
+            margin-top: 20px;
+            background-color: brown;
+            width: 450px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando Cubagem</h1>
+    <input type="number" name="txtn1" id="txtn1">
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="number" name="txtn3" id="txtn3">
+    <input id="botao"type="button" value="cubagem" onclick="cubagem()">
+    <div id="res"> Resultado</div>
+    <script>
+        function cubagem() {
+            var tn1 = document.getElementById("txtn1")
+            var tn2 = document.querySelector ("input#txtn2")
+            var tn3 = document.getElementById ("txtn3")
+            var res = document.getElementById("res")
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var n3 = Number(tn3.value)
+            var s = n1 * n2 * n3
+            res.innerHTML = `A cubagem entre [${n1}] [${n2}] [${n3}] é igual a <strong>${s}</strong>`
+        }
+        var cor = document.getElementById("res")
+            cor.addEventListener("mouseenter", trocaCor)
+            cor.addEventListener("mouseout", trocaCor1)
+        function trocaCor(){
+            cor.style.background = "green"
+        }
+        function trocaCor1() {
+            cor.style.background = "brown" 
+        }
+    </script>
+</body>
+</html>

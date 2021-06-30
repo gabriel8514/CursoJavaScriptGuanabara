@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando</title> 
+    <link rel="stylesheet" href="estilo.css">
+</head> 
+<body>
+    <header>
+        <h1 id="titulo"> Bora Fazer Conta </h1> 
+        <h2 id="subtitulo"> Calculadora Simples &#x2795 &#x2796 &#x2716 &#x2797 </h2>
+    </header>
+    <section>
+        <div> 
+            <p> Numero 1 <input type="number" name="n1" id="n1" placeholder="N1" class="input"> </p>
+            <p> Operação (+ - * /) <input type="text" name="" id="op" class="input" placeholder="Operação"> </p>
+            <p> Numero 2 <input type="number" name="n2" id="n2" class="input" placeholder="N2"> </p>
+            <input id="botao" type="button" value="Calcular" onclick="calcular()">
+        <h3 id="result">
+            Para obter o resultado preencha os campos acima.
+        </h3>
+        </div>
+        <div> 
+            <script>
+                function calcular (){
+                    var n1 = document.getElementById("n1").value
+                    var n2 = document.getElementById("n2").value
+                    var op = document.getElementById("op").value
+                    var result = document.getElementById("result")
+
+                    var classInput = document.querySelector('.input')
+
+                    var n1convert = Number(n1)
+                    var n2convert = Number(n2)
+                    var resultado = 0
+                    //var img = document.createElement("img")
+                    //img.setAttribute("id", "foto")
+                    if (op == "+") {
+                        resultado = n1convert + n2convert
+                        result.innerHTML = `O resultado da soma de ${n1convert} + ${n2convert} é de ${resultado}`
+                        //classInput.value = ' ';
+                        
+                        //img.setAttribute("src", "foto_res.png") 
+                    } else if (op == "-") {
+                        resultado = n1convert - n2convert
+                        result.innerHTML = `O resultado da subtração de ${n1convert} - ${n2convert} é de ${resultado}` 
+                        //classInput.value = ' ';
+                    } else if (op == "*") {
+                        resultado = n1convert * n2convert
+                        result.innerHTML = `O resultado da multiplicação de ${n1convert} * ${n2convert} é de ${resultado}`
+                        //classInput.value = ' ';
+                    } else if (op == "/") {
+                        resultado = n1convert / n2convert
+                        result.innerHTML = `O resultado da divisão de ${n1convert} / ${n2convert} é de ${resultado}`
+                        //classInput.value = ' ';
+                    } else {
+                        alert ("[ERRO!] Verifique os dados e tente novamente.")
+                    }
+
+                    classInput.value = ' ';
+                } //res.appendChild(img) falta aprender a colocar imagem cassete 
+                
+            </script>
+    </section>
+</body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos da Alura</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>Digite um numero</h1> <input type="number" name="n1" id="n1">
+    <h1>Digite outro numero</h1> <input type="number" name="n2" id="n2">
+    <h1> <input type="button" value="Calcular" onclick="calcular()"> </h1>  <!-- ao chamar uma funcao como calcular usamos (), senao o compilador entende que é um text calcular, para passar valores para esta função coloque nos() como calcular (n1,n2)-->
+    <div>
+        <h1> A soma é = <p id="result"></p></h1> 
+    </div>
+</body>
+<script> 
+
+    function calcular() {
+        var n1 = parseInt(document.getElementById("n1").value); //<!-- estava faltando no metodo document a propriedade do objeto que queremos acessar, no caso o value, ou o valor que ela contem-->
+        var n2 = parseInt(document.getElementById("n2").value); //<!-- o metodo ParseInt converte o valor informado em numero, evitando aquela concatenação 5+3 = 53-->
+        
+        var soma = 0    //<!-- sempre bom iniciar uma variável antes de usala para o compilador entender o tipo de dado que vamos lancar nela-->    
+        var soma = n1 + n2;
+        document.getElementById("result").innerHTML = soma;
+        
+    }
+</script>

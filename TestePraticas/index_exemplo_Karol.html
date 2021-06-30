@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos da Alura</title>
+    <style>
+        body {
+            background-color: rgb(32, 134, 134);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Digite um numero</h1> <input type="number" name="n1" id="n1">
+    <h1>Digite outro numero</h1> <input type="number" name="n2" id="n2">
+    <h1> <input type="button" value="Calcular" onclick="calcular()"> </h1> 
+    <div id="1">
+        <h2 id="result"> Digite dois valores acima e clique em calcular para obter o resultado. </h2>
+    </div>
+<body>
+<script> 
+    //var n1 = document.getElementById("n1")
+    //var n2 = document.getElementById("n2")
+
+    function calcular() {
+        var n1 = document.getElementById("n1").value
+        var n2 = document.getElementById("n2").value
+        var n1convertida = Number(n1)
+        var n2convertida = Number(n2)
+        var soma = 0 
+        var soma = n1convertida + n2convertida
+        //document.getElementById("result").innerHTML = `Resultado = ${soma}` //como coloquei o result dentro do h1 manteve a formatação. 
+        result.innerHTML = `Resultado da soma dos dois numeros é = ${soma}` //como coloquei o result dentro do h1 manteve a formatação. 
+        n1convertida.value = "" // não ta funcionando :( 
+        n2convertida.value = ""
+        n1convertida.focus() 
+    }
+</script>
+</html>
