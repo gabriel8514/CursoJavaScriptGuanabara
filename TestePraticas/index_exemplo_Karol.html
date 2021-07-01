@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    <h1>Digite um numero</h1> <input type="number" name="n1" id="n1">
+    <h1>Digite um numero</h1> <input type="number" name="n1" id="n1" autofocus>
     <h1>Digite outro numero</h1> <input type="number" name="n2" id="n2">
     <h1> <input type="button" value="Calcular" onclick="calcular()"> </h1> 
     <div id="1">
@@ -23,7 +23,6 @@
 <script> 
     //var n1 = document.getElementById("n1")
     //var n2 = document.getElementById("n2")
-
     function calcular() {
         var n1 = document.getElementById("n1").value
         var n2 = document.getElementById("n2").value
@@ -33,9 +32,14 @@
         var soma = n1convertida + n2convertida
         //document.getElementById("result").innerHTML = `Resultado = ${soma}` //como coloquei o result dentro do h1 manteve a formatação. 
         result.innerHTML = `Resultado da soma dos dois numeros é = ${soma}` //como coloquei o result dentro do h1 manteve a formatação. 
-        n1convertida.value = "" // não ta funcionando :( 
+        /*
+        n1convertida.value = "" // não ta funcionando :( --> não funcionou pois eu não estava puxando a variavel
         n2convertida.value = ""
         n1convertida.focus() 
+        */
+        document.getElementById("n1").value = ""
+        document.getElementById("n2").value = ""
+        //n1convertida.value.focus() só falta isso 
     }
 </script>
 </html>
